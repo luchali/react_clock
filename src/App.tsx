@@ -66,10 +66,6 @@ export class App extends React.Component<{}, AppState> {
       return;
     }
 
-    this.setState({
-      time: new Date().toUTCString().slice(-12, -4),
-    });
-
     this.timeTimerId = window.setInterval(() => {
       this.setState(
         {
@@ -96,8 +92,6 @@ export class App extends React.Component<{}, AppState> {
     if (this.nameTimerId) {
       return;
     }
-
-    this.stopNameTimer();
 
     this.nameTimerId = window.setInterval(() => {
       this.setState(prevState => {
